@@ -10,36 +10,14 @@
     "enabled": true,
   },
   "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": [
-        "OnboardingChatAgent"
-      ]
-    },
-    {
-      "tag": "v2",
-      "new_sqlite_classes": [
-        "SamChatAgent"
-      ]
-    },
-    {
-      "tag": "v3",
-      "new_sqlite_classes": [
-        "AuditScratchpad"
-      ]
-    },
-    {
-      "tag": "v4",
-      "deleted_classes": [
-        "AuditScratchpad"
-      ]
-    },
-    {
-      "tag": "v5",
-      "deleted_classes": [
-        "OnboardingChatAgent"
-      ]
-    }
+  {
+    "tag": "v1",
+    "new_sqlite_classes": ["AuditScratchpad"]
+  },
+  {
+    "tag": "v2-remove-legacy-audit-scratchpad",
+    "deleted_classes": ["AuditScratchpad"]
+  }
   ],
   // Uncomment when deploying to the openseo.so Cloudflare account. Self-hosters
   // should leave this commented (or replace with their own zone) — otherwise
