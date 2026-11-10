@@ -3,10 +3,44 @@
   "name": "open-seo",
   "main": "src/server.ts",
   "compatibility_date": "2025-09-02",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "observability": {
     "enabled": true,
   },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "OnboardingChatAgent"
+      ]
+    },
+    {
+      "tag": "v2",
+      "new_sqlite_classes": [
+        "SamChatAgent"
+      ]
+    },
+    {
+      "tag": "v3",
+      "new_sqlite_classes": [
+        "AuditScratchpad"
+      ]
+    },
+    {
+      "tag": "v4",
+      "deleted_classes": [
+        "AuditScratchpad"
+      ]
+    },
+    {
+      "tag": "v5",
+      "deleted_classes": [
+        "OnboardingChatAgent"
+      ]
+    }
+  ],
   // Uncomment when deploying to the openseo.so Cloudflare account. Self-hosters
   // should leave this commented (or replace with their own zone) — otherwise
   // `wrangler deploy` fails with "Could not find zone for app.openseo.so".
@@ -27,7 +61,9 @@
     },
   ],
   "triggers": {
-    "crons": ["*/15 * * * *"],
+    "crons": [
+      "*/15 * * * *"
+    ],
   },
   "kv_namespaces": [
     {
